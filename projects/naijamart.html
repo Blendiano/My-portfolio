@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NaijaMart case study — designing and building an affordable fashion e-commerce MVP for Nigerian shoppers, from product thinking and UI design to a deployed Next.js storefront with Paystack checkout.">
+    <meta name="theme-color" content="#F8F8F5">
+    <title>NaijaMart Case Study — Adetiba Samuel</title>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="NaijaMart Case Study — Adetiba Samuel">
+    <meta property="og:description" content="Designing and building an affordable fashion e-commerce MVP for Nigerian shoppers — from first screen to Paystack checkout.">
+    <meta property="og:site_name" content="Adetiba Samuel">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/sys-tokens.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/case-study-naijamart.css">
+</head>
+<body class="nm-case" data-project-id="naijamart">
+    <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a href="../" class="site-logo">Adetiba Samuel<span class="site-logo__dot">.</span></a>
+            <button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+                <svg class="mobile-menu-icon mobile-menu-icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg class="mobile-menu-icon mobile-menu-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <nav class="main-nav">
+                <ul id="main-nav" class="nav-list">
+                    <li><a href="../#projects" class="nav-link">Work</a></li>
+                    <li><a href="../#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+            <a href="../#contact" class="button button--secondary header-cta">Let's talk</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- 01 · PROJECT OVERVIEW -->
+        <header class="nm-hero">
+            <div class="container">
+                <div class="nm-hero__grid">
+                    <div class="nm-hero__content">
+                        <p class="nm-kicker">Project overview <span aria-hidden="true">-</span> <span class="nm-kicker__detail">Fashion e-commerce</span></p>
+
+                        <h1 class="nm-hero__title">NaijaMart</h1>
+                        <p class="nm-hero__subtitle">Affordable fashion, made easy to buy.</p>
+                        <p class="nm-hero__lead">A fashion storefront for Nigerian men and women — designed, built and deployed from the first screen to a Paystack checkout.</p>
+                        <div class="nm-hero__actions">
+                            <a href="https://naijamart-five.vercel.app/" class="nm-button nm-button--primary" target="_blank" rel="noopener noreferrer">
+                                Visit the live store <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span>
+                            </a>
+                            <a href="https://github.com/Blendiano/naijamartapp" class="nm-button nm-button--ghost" target="_blank" rel="noopener noreferrer">
+                                View source code <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <figure class="nm-hero__figure">
+                        <a class="nm-gallery__open" href="../assets/images/naijamart/naijamart-home.webp" data-gallery-item data-title="Storefront" data-description="The deployed NaijaMart homepage — the first screen a shopper sees, with the fashion editorial hero and clear calls to action." aria-label="Open the NaijaMart storefront screenshot in a larger view">
+                            <div class="nm-shot">
+                                <img
+                                    src="../assets/images/naijamart/naijamart-home.webp"
+                                    alt="NaijaMart storefront homepage with a full-width fashion editorial image, the headline 'Style that speaks to you', calls to action and the start of the shop-by-category section"
+                                    width="1440"
+                                    height="900"
+                                    fetchpriority="high"
+                                    decoding="async"
+                                >
+                            </div>
+                            <span class="nm-gallery__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+                        </a>
+                        <figcaption class="nm-hero__caption">The deployed NaijaMart storefront. Select to enlarge.</figcaption>
+                    </figure>
+                </div>
+
+                <dl class="nm-meta" aria-label="Project details">
+                    <div class="nm-meta__item">
+                        <dt>Project type</dt>
+                        <dd>Fashion e-commerce <span aria-hidden="true">·</span> Web application</dd>
+                    </div>
+                    <div class="nm-meta__item">
+                        <dt>My role</dt>
+                        <dd>Product design <span aria-hidden="true">·</span> UI/UX <span aria-hidden="true">·</span> Design system <span aria-hidden="true">·</span> Frontend development</dd>
+                    </div>
+                    <div class="nm-meta__item">
+                        <dt>Technology</dt>
+                        <dd>Next.js <span aria-hidden="true">·</span> TypeScript <span aria-hidden="true">·</span> Tailwind CSS <span aria-hidden="true">·</span> shadcn/ui <span aria-hidden="true">·</span> Neon PostgreSQL <span aria-hidden="true">·</span> Drizzle ORM <span aria-hidden="true">·</span> Auth.js <span aria-hidden="true">·</span> Paystack</dd>
+                    </div>
+                </dl>
+            </div>
+        </header>
+
+        <!-- 02 · THE PROBLEM & OPPORTUNITY -->
+        <section id="problem" class="nm-section" aria-labelledby="problem-title">
+            <div class="container">
+                <div class="nm-section__head">
+                    <p class="nm-kicker">The problem &amp; opportunity</p>
+                    <h2 id="problem-title">Shopping for fashion online should feel effortless.</h2>
+                </div>
+
+                <div class="nm-split">
+                    <div class="nm-split__item">
+                        <h3>The problem</h3>
+                        <p>Finding and buying affordable fashion online in Nigeria can mean jumping between social media pages, direct messages, and screenshots. Product details, prices, sizes, and availability are often scattered, making it difficult to compare options and complete a purchase with confidence.</p>
+                    </div>
+                    <div class="nm-split__item">
+                        <h3>The opportunity</h3>
+                        <p>NaijaMart aims to bring the shopping experience into one focused storefront. A place where shoppers can easily discover products, explore clear product details, and move through a straightforward checkout without unnecessary friction.</p>
+                    </div>
+                </div>
+
+                <p class="nm-pullquote">The goal was simple: make it easy for shoppers to go from discovering a product to completing an order with confidence.</p>
+            </div>
+        </section>
+
+        <!-- 03 · MY ROLE & DESIGN PROCESS -->
+        <section id="role" class="nm-section nm-section--tint" aria-labelledby="role-title">
+            <div class="container">
+                <div class="nm-section__head">
+                    <p class="nm-kicker">My role &amp; design process</p>
+                    <h2 id="role-title">Designed and built end to end.</h2>
+                    <p class="nm-section__lead">I led product thinking, UI design, and frontend development from concept to deployment.</p>
+                </div>
+
+                <div class="nm-role">
+                    <div>
+                        <h3 class="nm-subhead">What I owned</h3>
+                        <ul class="nm-role__list">
+                            <li>Product scope and user flows</li>
+                            <li>UI/UX and responsive interface design</li>
+                            <li>Design system and reusable components</li>
+                            <li>Frontend implementation</li>
+                            <li>Authentication and payment integration</li>
+                            <li>Deployment and release</li>
+                        </ul>
+
+                        <p class="nm-audience"><strong>Designed for</strong> Nigerian men and women shopping for affordable fashion, including first-time online shoppers who need clarity and reassurance more than novelty.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="nm-subhead">How I approached it</h3>
+                        <ol class="nm-process">
+                            <li>
+                                <div>
+                                    <h4>Scope the journey</h4>
+                                    <p>I started with the shopping problem and defined the MVP around one complete path from browsing to payment, keeping everything that did not serve that path out of scope.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h4>Map the flow</h4>
+                                    <p>I mapped the catalogue, product, cart and checkout, and gave menswear and womenswear their own clear routes through the store.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h4>Build the system</h4>
+                                    <p>I turned the visual direction into reusable type, spacing, colour and components, so each new screen inherited the same rules.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <h4>Implement, review, refine</h4>
+                                    <p>I built the frontend, connected the data, authentication and payment layers, reviewed each screen in the browser, refined it, and deployed the finished build to Vercel.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 · KEY DESIGN DECISIONS -->
+        <section id="decisions" class="nm-section" aria-labelledby="decisions-title">
+            <div class="container">
+                <div class="nm-section__head">
+                    <p class="nm-kicker">Key design decisions</p>
+                    <h2 id="decisions-title">Decisions that keep the journey moving.</h2>
+                    <p class="nm-section__lead">The interface is deliberately quiet. These choices carry the experience instead.</p>
+                </div>
+
+                <div class="nm-decisions">
+                    <article class="nm-decision">
+                        <h3>Simple Navigation</h3>
+                        <p>A clean header makes shopping, search, account, and cart easy to access.</p>
+                    </article>
+                    <article class="nm-decision">
+                        <h3>Clear Shopping Paths</h3>
+                        <p>Separate men's and women's fashion for easier product discovery.</p>
+                    </article>
+                    <article class="nm-decision">
+                        <h3>Informative Product Cards</h3>
+                        <p>Show product names, categories, prices, and clear actions.</p>
+                    </article>
+                    <article class="nm-decision">
+                        <h3>Focused Product Details</h3>
+                        <p>Prioritise product images, sizes, colours, availability, and pricing.</p>
+                    </article>
+                    <article class="nm-decision">
+                        <h3>Consistent Visual Design</h3>
+                        <p>Use shared typography, colours, spacing, and components throughout.</p>
+                    </article>
+                    <article class="nm-decision">
+                        <h3>Responsive Experience</h3>
+                        <p>Ensure a smooth and consistent shopping experience across devices.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 · THE FINAL EXPERIENCE -->
+        <section id="experience" class="nm-section nm-section--tint" aria-labelledby="experience-title">
+            <div class="container">
+                <div class="nm-section__head">
+                    <p class="nm-kicker">The final experience</p>
+                    <h2 id="experience-title">The finished journey, screen by screen.</h2>
+                    <p class="nm-section__lead">Every screen below is from the deployed NaijaMart build — no mockups. The path is linear: arrive, browse, inspect, add, review, pay. Select any screen to open a larger view.</p>
+                </div>
+
+                <div class="nm-gallery" data-gallery>
+                    <figure class="nm-figure">
+                        <a class="nm-gallery__open" href="../assets/images/naijamart/naijamart-catalogue.webp" data-gallery-item aria-label="Open the Catalogue screenshot in a larger view">
+                            <div class="nm-figure__frame">
+                                <img
+                                    src="../assets/images/naijamart/naijamart-catalogue.webp"
+                                    alt="NaijaMart catalogue page showing category filters and a grid of fashion products with names, categories and naira prices"
+                                    width="1440"
+                                    height="900"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </div>
+                            <span class="nm-gallery__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+                        </a>
+                        <figcaption>
+                            <h3 class="nm-figure__title">Catalogue</h3>
+                            <p class="nm-figure__text">Category filters for accessories, menswear and womenswear, with product cards that show the category, name and naira price before a shopper commits.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="nm-figure">
+                        <a class="nm-gallery__open" href="../assets/images/naijamart/naijamart-product-detail.webp" data-gallery-item aria-label="Open the Product detail screenshot in a larger view">
+                            <div class="nm-figure__frame">
+                                <img
+                                    src="../assets/images/naijamart/naijamart-product-detail.webp"
+                                    alt="NaijaMart product detail page for the Gold-Plated Bangles Set, showing product photography, price, description, size and colour selection, quantity and add-to-cart controls, plus delivery and secure-payment notes"
+                                    width="1440"
+                                    height="900"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </div>
+                            <span class="nm-gallery__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+                        </a>
+                        <figcaption>
+                            <h3 class="nm-figure__title">Product detail</h3>
+                            <p class="nm-figure__text">A single product view that puts the photography first, then answers the practical questions: size, colour, quantity, price and delivery.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="nm-figure">
+                        <a class="nm-gallery__open" href="../assets/images/naijamart/naijamart-cart.webp" data-gallery-item aria-label="Open the Shopping cart screenshot in a larger view">
+                            <div class="nm-figure__frame">
+                                <img
+                                    src="../assets/images/naijamart/naijamart-cart.webp"
+                                    alt="NaijaMart shopping cart containing the Gold-Plated Bangles Set, with quantity controls, item price and an order summary showing the subtotal and total"
+                                    width="1440"
+                                    height="900"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </div>
+                            <span class="nm-gallery__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+                        </a>
+                        <figcaption>
+                            <h3 class="nm-figure__title">Shopping cart</h3>
+                            <p class="nm-figure__text">Line items, selected size and colour, quantity controls, and an order summary that keeps the total and the next step in view.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="nm-figure">
+                        <a class="nm-gallery__open" href="../assets/images/naijamart/naijamart-checkout.webp" data-gallery-item aria-label="Open the Checkout screenshot in a larger view">
+                            <div class="nm-figure__frame">
+                                <img
+                                    src="../assets/images/naijamart/naijamart-checkout.webp"
+                                    alt="NaijaMart checkout page with contact information fields, delivery address and the start of delivery method options, alongside a live order summary and a Paystack payment note"
+                                    width="1440"
+                                    height="900"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </div>
+                            <span class="nm-gallery__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+                        </a>
+                        <figcaption>
+                            <h3 class="nm-figure__title">Checkout</h3>
+                            <p class="nm-figure__text">Contact details, delivery address and method, and a live order summary. Payment is completed securely through Paystack.</p>
+                        </figcaption>
+                    </figure>
+
+                    <div class="nm-gallery__pair">
+                        <figure class="nm-figure">
+                            <a class="nm-gallery__open" href="../assets/images/naijamart/naijamart-sign-in.webp" data-gallery-item aria-label="Open the Sign in screenshot in a larger view">
+                                <div class="nm-figure__frame">
+                                    <img
+                                        src="../assets/images/naijamart/naijamart-sign-in.webp"
+                                        alt="NaijaMart sign-in screen with email and password fields, remember-me option, forgotten-password link and account creation link"
+                                        width="1440"
+                                        height="1800"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </div>
+                                <span class="nm-gallery__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+                            </a>
+                            <figcaption>
+                                <h3 class="nm-figure__title">Sign in</h3>
+                                <p class="nm-figure__text">A focused account entry point with remember-me and password recovery.</p>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="nm-figure">
+                            <a class="nm-gallery__open" href="../assets/images/naijamart/naijamart-sign-up.webp" data-gallery-item aria-label="Open the Create an account screenshot in a larger view">
+                                <div class="nm-figure__frame">
+                                    <img
+                                        src="../assets/images/naijamart/naijamart-sign-up.webp"
+                                        alt="NaijaMart account creation screen with full name, email, password and password confirmation fields"
+                                        width="1440"
+                                        height="1800"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </div>
+                                <span class="nm-gallery__zoom" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+                            </a>
+                            <figcaption>
+                                <h3 class="nm-figure__title">Create an account</h3>
+                                <p class="nm-figure__text">Name, email and password confirmation — the start of the post-purchase experience.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="nm-mobile">
+                        <div class="nm-mobile__copy">
+                            <p class="nm-kicker">Responsive</p>
+                            <h3>The same store, on a phone.</h3>
+                            <p>The landing page reflows to a single column at 390px, keeping the same hierarchy, imagery and calls to action. Search, account and cart stay within reach.</p>
+                        </div>
+                        <figure class="nm-device">
+                            <img
+                                src="../assets/images/naijamart/naijamart-mobile-home.webp"
+                                alt="NaijaMart mobile homepage at 390 pixels wide, showing the navigation, hero headline and calls to action"
+                                width="780"
+                                height="1688"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                            <figcaption class="visually-hidden">The NaijaMart storefront on a mobile-width screen.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 · OUTCOME & KEY LEARNINGS -->
+        <section id="outcome" class="nm-section nm-section--tint" aria-labelledby="outcome-title">
+            <div class="container">
+                <div class="nm-section__head">
+                    <p class="nm-kicker">Outcome &amp; key learnings</p>
+                    <h2 id="outcome-title">Built, deployed and ready to use.</h2>
+                </div>
+
+                <div class="nm-outcome">
+                    <div class="nm-outcome__copy">
+                        <p class="nm-outcome__lead">NaijaMart is live. The MVP completes the journey it set out to build: a shopper can land on the storefront, browse by category, inspect a product, add it to the cart, review the order and pay through Paystack.</p>
+                        <p>The code is public, and the deployment is the same build shown above. The outcome is a working product: a complete shopping journey that people can use today.</p>
+
+                        <div class="nm-proof">
+                            <div>
+                                <h3>Design demonstrated</h3>
+                                <p>Product thinking, user flows, responsive interface design, design systems and visual hierarchy.</p>
+                            </div>
+                            <div>
+                                <h3>Build demonstrated</h3>
+                                <p>Next.js and TypeScript, a data-backed catalogue, authentication, payments, deployment and AI-assisted iteration.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nm-learnings">
+                        <h3>What I learned</h3>
+                        <ol>
+                            <li>
+                                <strong>Scope is a design decision.</strong>
+                                <p>A finished journey reads better than a long list of half-built features.</p>
+                            </li>
+                            <li>
+                                <strong>Systems make consistency affordable.</strong>
+                                <p>Setting type, spacing and components first made each new screen faster and more coherent.</p>
+                            </li>
+                            <li>
+                                <strong>Build to find the truth.</strong>
+                                <p>A running store surfaced realities — empty states, errors, mobile widths — that a static design never would.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <p class="nm-future"><strong>Possible next steps, not shipped:</strong> a wider multi-category marketplace, richer search and filtering, and deeper account and order tools. The current MVP is the foundation, not the finish line.</p>
+            </div>
+        </section>
+
+        <!-- CLOSING CTA -->
+        <div class="container">
+            <div class="nm-cta">
+                <div>
+                    <p class="nm-kicker nm-kicker--light">See it in use</p>
+                    <h2>Try the NaijaMart store.</h2>
+                    <p>Browse the live storefront, or read the code behind it.</p>
+                </div>
+                <div class="nm-cta__actions">
+                    <a href="https://naijamart-five.vercel.app/" class="nm-button nm-button--light" target="_blank" rel="noopener noreferrer">
+                        Visit the live store <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                    <a href="https://github.com/Blendiano/naijamartapp" class="nm-button nm-button--outline-light" target="_blank" rel="noopener noreferrer">
+                        View source code <span aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CASE STUDY NAVIGATION -->
+        <div class="container">
+            <nav class="case-study-nav" aria-label="More case studies">
+                <a href="menowell.html" class="case-study-nav__link case-study-nav__link--prev"><span class="visually-hidden">Previous project: </span>Menowell</a>
+                <a href="greenscore.html" class="case-study-nav__link case-study-nav__link--next"><span class="visually-hidden">Next project: </span>GreenScore</a>
+            </nav>
+        </div>
+
+        <!-- Interactive screenshot lightbox. Hidden until a gallery image is selected. -->
+        <div class="nm-lightbox" data-lightbox role="dialog" aria-modal="true" aria-labelledby="nm-lightbox-title" hidden>
+            <div class="nm-lightbox__backdrop" data-lightbox-close></div>
+            <div class="nm-lightbox__panel" data-lightbox-panel>
+                <div class="nm-lightbox__bar">
+                    <p class="nm-lightbox__counter" data-lightbox-counter aria-live="polite">1 of 7</p>
+                    <button type="button" class="nm-lightbox__icon-button" data-lightbox-close aria-label="Close gallery">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+
+                <div class="nm-lightbox__stage" data-lightbox-stage>
+                    <button type="button" class="nm-lightbox__nav nm-lightbox__nav--prev" data-lightbox-prev aria-label="Previous screenshot">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+                    </button>
+                    <figure class="nm-lightbox__figure">
+                        <img
+                            class="nm-lightbox__image"
+                            data-lightbox-image
+                            src="../assets/images/naijamart/naijamart-catalogue.webp"
+                            alt="NaijaMart catalogue page showing category filters and a grid of fashion products with names, categories and naira prices"
+                            width="1440"
+                            height="900"
+                            decoding="async"
+                        >
+                        <figcaption class="nm-lightbox__caption">
+                            <h3 class="nm-lightbox__title" id="nm-lightbox-title" data-lightbox-title>Catalogue</h3>
+                            <p class="nm-lightbox__description" data-lightbox-description>Category filters for accessories, menswear and womenswear, with product cards that show the category, name and naira price before a shopper commits.</p>
+                        </figcaption>
+                    </figure>
+                    <button type="button" class="nm-lightbox__nav nm-lightbox__nav--next" data-lightbox-next aria-label="Next screenshot">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+                    </button>
+                </div>
+
+                <div class="nm-lightbox__thumbs" data-lightbox-thumbnails role="group" aria-label="Choose a screenshot"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p class="site-footer__copyright">&copy; <span id="current-year">2026</span> Adetiba Samuel. All rights reserved.</p>
+            <div class="social-links" id="profile-socials"></div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script type="module" src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+# Component Builder Skill
+
+## Purpose
+
+This skill defines how the AI agent should create reusable UI components for the portfolio.
+
+The goal is to create components that are:
+
+- Reusable
+- Accessible
+- Responsive
+- Consistent
+- Easy to maintain
+- Compatible with the project's vanilla HTML/CSS/JavaScript architecture
+
+---
+
+# 1. When to Create a Component
+
+Create a component when:
+
+- The UI pattern appears multiple times.
+- The component contains meaningful behavior.
+- Reuse improves consistency.
+- The component has a clear responsibility.
+
+Examples:
+
+- Navigation
+- Project Card
+- Button
+- Social Link
+- Section Heading
+- Project Tag
+- Modal
+- Contact Form
+
+---
+
+# 2. When NOT to Create a Component
+
+Do not create a component for:
+
+- One simple paragraph
+- One unique heading
+- A single `<div>`
+- Trivial markup
+- Every individual HTML element
+
+Avoid over-engineering.
+
+---
+
+# 3. Component Requirements
+
+Every component should have:
+
+1. Clear purpose
+2. Predictable structure
+3. Responsive behavior
+4. Accessible markup
+5. Reusable styling where appropriate
+6. Minimal JavaScript
+7. Clear dependencies
+
+---
+
+# 4. Component Structure
+
+A component should generally have:
+
+```text
+Structure
+↓
+Styles
+↓
+Behavior
+↓
+Accessibility
+
+Do not mix unrelated functionality.
+
+5. Example Project Card
+
+HTML:
+
+<article class="project-card">
+  <a href="/projects/greenscore.html">
+    <img
+      src="assets/images/greenscore-cover.webp"
+      alt="GreenScore sustainability app interface"
+    />
+
+    <div class="project-card__content">
+      <p class="project-card__category">Product Design</p>
+      <h3 class="project-card__title">GreenScore</h3>
+      <p class="project-card__description">
+        A gamified sustainability product designed to encourage
+        eco-friendly habits.
+      </p>
+    </div>
+  </a>
+</article>
+6. Component Data
+
+Where possible, components should receive structured data rather than duplicating content.
+
+Example:
+
+function createProjectCard(project) {
+  // Render project information from structured data.
+}
+7. Accessibility Requirements
+
+Components must support:
+
+Keyboard navigation
+Visible focus
+Semantic elements
+Meaningful labels
+Appropriate ARIA only when necessary
+Screen reader compatibility
+
+Do not use ARIA to compensate for incorrect semantic HTML.
+
+8. Buttons vs Links
+
+Use:
+
+<a>
+
+for navigation.
+
+Use:
+
+<button>
+
+for actions.
+
+Do not use:
+
+<div onclick="">
+
+for interactive controls.
+
+9. Component Styling
+
+Use design tokens.
+
+Example:
+
+.project-card {
+  background: var(--color-neutral-variant);
+  border: 1px solid var(--color-border);
+}
+
+Do not hard-code unrelated colors.
+
+10. Responsive Behavior
+
+Every reusable component must be tested at:
+
+Mobile
+Tablet
+Desktop
+
+Components must not introduce:
+
+Horizontal overflow
+Text clipping
+Broken layouts
+Unusable controls
+11. Component Naming
+
+Use descriptive names.
+
+Examples:
+
+ProjectCard
+Navigation
+SectionHeading
+SocialLinks
+ContactForm
+
+Avoid:
+
+Box
+Thing
+Component1
+BlueCard
+12. JavaScript Components
+
+Use functions for lightweight component behavior.
+
+Example:
+
+function initializeMobileNavigation() {
+  const button = document.querySelector(".menu-button");
+  const menu = document.querySelector(".mobile-menu");
+
+  if (!button || !menu) {
+    return;
+  }
+
+  // Initialize behavior.
+}
+13. Testing Checklist
+
+Before considering a component complete:
+
+ Correct semantic HTML
+ Keyboard accessible
+ Focus state visible
+ Mobile layout works
+ Desktop layout works
+ No console errors
+ No unnecessary dependencies
+ Uses design tokens
+ No duplicated logic
+ Content remains authentic
+14. Final Rule
+
+Build reusable components where reuse improves the product.
+
+Do not build an elaborate component framework for a simple portfolio.
+
+The component architecture should remain proportional to the project's complexity.

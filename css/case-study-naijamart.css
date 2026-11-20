@@ -1,0 +1,1309 @@
+/* --------------------------------
+   NaijaMart case study
+   Scoped to .nm-case so the shared case-study styles stay untouched.
+   Brand colours are taken from the deployed NaijaMart theme:
+   deep teal #184945, secondary green #44645b, warm off-white #fbf9f4.
+-------------------------------- */
+.nm-case {
+    --nm-deep: #184945;
+    --nm-warm: #fbf9f4;
+    --nm-line: #d8dfdb;
+    --nm-accent: #6d5c3b;
+    /* Space between two adjacent sections. Split across both sections so the
+       combined gap between their content is exactly this value. */
+    --nm-section-gap: 64px;
+    background-color: var(--sys-background);
+}
+
+.nm-case :where(a, button):focus-visible {
+    outline-color: var(--nm-deep);
+}
+
+/* --------------------------------
+   Typography helpers
+-------------------------------- */
+.nm-kicker {
+    display: block;
+    margin: 0 0 1.5rem;
+    max-width: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--nm-deep);
+}
+
+.nm-section .nm-kicker {
+    margin-bottom: 1rem;
+}
+
+.nm-kicker--light {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nm-section__head {
+    max-width: 54rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.nm-section__head h2 {
+    max-width: 22ch;
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+
+.nm-section__lead {
+    max-width: 60ch;
+    margin: 0;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    line-height: 1.65;
+}
+
+/* --------------------------------
+   Buttons
+-------------------------------- */
+.nm-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.8rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nm-button:hover,
+.nm-button:focus-visible {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.nm-button--primary {
+    background-color: var(--nm-deep);
+    color: var(--sys-surface);
+}
+
+.nm-button--primary:hover,
+.nm-button--primary:focus-visible {
+    background-color: #123a37;
+    color: var(--sys-surface);
+}
+
+.nm-button--ghost {
+    background-color: var(--sys-surface);
+    border-color: var(--nm-line);
+    color: var(--nm-deep);
+}
+
+.nm-button--ghost:hover,
+.nm-button--ghost:focus-visible {
+    border-color: var(--nm-deep);
+    color: var(--nm-deep);
+}
+
+.nm-button--light {
+    background-color: var(--sys-surface);
+    color: var(--nm-deep);
+}
+
+.nm-button--light:hover,
+.nm-button--light:focus-visible {
+    background-color: var(--nm-warm);
+    color: var(--nm-deep);
+}
+
+.nm-button--outline-light {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--sys-surface);
+}
+
+.nm-button--outline-light:hover,
+.nm-button--outline-light:focus-visible {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--sys-surface);
+    color: var(--sys-surface);
+}
+
+/* --------------------------------
+   01 · Hero / overview
+-------------------------------- */
+.nm-hero {
+    padding-block: clamp(3.5rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem);
+}
+
+.nm-hero .nm-kicker {
+    margin-bottom: 12px;
+    font-size: var(--sys-typography-text-lg-bold-font-size);
+    font-weight: var(--sys-typography-text-lg-bold-font-weight);
+    line-height: var(--sys-typography-text-lg-bold-line-height);
+    letter-spacing: 0;
+}
+
+.nm-kicker__detail {
+    font-size: var(--sys-typography-text-xs-medium-font-size);
+    font-weight: var(--sys-typography-text-xs-medium-font-weight);
+    line-height: var(--sys-typography-text-xs-medium-line-height);
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.nm-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    column-gap: 64px;
+    align-items: start;
+}
+
+.nm-hero__content {
+    grid-column: 2;
+    grid-row: 1;
+    /* Nudge the copy down so it doesn't align flush with the top of the image */
+    padding-top: clamp(1rem, 2.5vw, 2.25rem);
+}
+
+.nm-hero__title {
+    margin: 0;
+    font-size: var(--sys-typography-display-sm-bold-font-size);
+    font-weight: var(--sys-typography-display-sm-bold-font-weight);
+    line-height: var(--sys-typography-display-sm-bold-line-height);
+    letter-spacing: var(--sys-typography-display-sm-bold-letter-spacing);
+}
+
+.nm-hero__subtitle {
+    max-width: 42ch;
+    margin: 0;
+    color: var(--nm-deep);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+}
+
+.nm-hero__lead {
+    max-width: 46ch;
+    margin: 12px 0 40px;
+    font-size: var(--sys-typography-text-sm-regular-font-size);
+    font-weight: var(--sys-typography-text-sm-regular-font-weight);
+    line-height: var(--sys-typography-text-sm-regular-line-height);
+    letter-spacing: var(--sys-typography-text-sm-regular-letter-spacing);
+}
+
+.nm-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.nm-hero__figure {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+}
+
+.nm-shot {
+    overflow: hidden;
+    border: 1px solid var(--nm-line);
+    border-radius: 18px;
+    background-color: var(--nm-warm);
+    box-shadow: 0 12px 28px -22px rgba(24, 73, 69, 0.25);
+}
+
+.nm-shot img {
+    width: 100%;
+    height: auto;
+}
+
+.nm-hero__caption {
+    margin-top: 0.85rem;
+    font-size: 0.85rem;
+    color: var(--sys-text-secondary);
+}
+
+/* Project meta */
+.nm-meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.25rem, 3vw, 2rem);
+    margin: clamp(2rem, 4vw, 3rem) 0 0;
+    padding-top: clamp(1.5rem, 3vw, 2rem);
+}
+
+.nm-meta dt {
+    margin-bottom: 0.35rem;
+    color: var(--sys-text-secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.nm-meta dd {
+    margin: 0;
+    color: var(--sys-text);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+/* Small vertical strokes separate the detail columns */
+.nm-meta__item + .nm-meta__item {
+    padding-left: clamp(1rem, 2vw, 1.5rem);
+    border-left: 1px solid var(--nm-line);
+}
+
+/* --------------------------------
+   Sections
+   Strokes live between sections only — no rule above the first
+   section or at the very bottom of the page.
+-------------------------------- */
+.nm-section {
+    /* Half of the gap per side: two neighbouring sections add up to 64px. */
+    padding-block: calc(var(--nm-section-gap) / 2);
+}
+
+.nm-section + .nm-section {
+    border-top: 1px solid var(--nm-line);
+}
+
+/* No closing rule above the footer on this page */
+.nm-case .site-footer {
+    border-top: 0;
+}
+
+.nm-section--tint {
+    background-color: color-mix(in srgb, var(--nm-deep) 4%, var(--sys-background));
+}
+
+/* 02 · Problem & opportunity */
+/* Section-scoped spacing: gives the heading more room to breathe before
+   the two columns, without affecting the other case-study sections. */
+#problem .nm-section__head {
+    margin-bottom: 48px;
+}
+
+#problem .nm-section__head .nm-kicker {
+    margin-bottom: 8px;
+}
+
+#problem .nm-section__head h2 {
+    max-width: none;
+    margin-bottom: 0;
+    white-space: nowrap;
+    /* display-md-bold */
+    font-size: var(--sys-typography-display-md-bold-font-size);
+    font-weight: var(--sys-typography-display-md-bold-font-weight);
+    line-height: var(--sys-typography-display-md-bold-line-height);
+    letter-spacing: var(--sys-typography-display-md-bold-letter-spacing);
+}
+
+.nm-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.nm-split__item {
+    padding-top: 12px;
+    border-top: 2px solid var(--nm-deep);
+}
+
+.nm-split__item:nth-child(2) {
+    border-top-color: var(--nm-accent);
+}
+
+.nm-split h3 {
+    margin: 0 0 0.75rem;
+    color: var(--nm-deep);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.nm-split p {
+    max-width: 48ch;
+    margin: 0;
+    /* text-md-regular */
+    font-size: var(--sys-typography-text-md-regular-font-size);
+    font-weight: var(--sys-typography-text-md-regular-font-weight);
+    line-height: var(--sys-typography-text-md-regular-line-height);
+    letter-spacing: var(--sys-typography-text-md-regular-letter-spacing);
+}
+
+.nm-pullquote {
+    max-width: 52ch;
+    margin: clamp(2.75rem, 5vw, 4rem) 0 0;
+    padding-left: clamp(1rem, 3vw, 2rem);
+    border-left: 3px solid var(--nm-deep);
+    color: var(--nm-deep);
+    /* display-xs-semibold */
+    font-size: var(--sys-typography-display-xs-semibold-font-size);
+    font-weight: var(--sys-typography-display-xs-semibold-font-weight);
+    line-height: var(--sys-typography-display-xs-semibold-line-height);
+    letter-spacing: var(--sys-typography-display-xs-semibold-letter-spacing);
+}
+
+/* 03 · Role & process */
+#role {
+    padding-top: 64px;
+}
+
+#role .nm-section__head {
+    margin-inline: auto;
+    text-align: center;
+}
+
+#role .nm-section__head .nm-kicker {
+    margin-bottom: 0;
+}
+
+#role .nm-section__head h2 {
+    margin-inline: auto;
+    margin-bottom: 12px;
+    /* display-md-bold */
+    font-size: var(--sys-typography-display-md-bold-font-size);
+    font-weight: var(--sys-typography-display-md-bold-font-weight);
+    line-height: var(--sys-typography-display-md-bold-line-height);
+    letter-spacing: var(--sys-typography-display-md-bold-letter-spacing);
+}
+
+#role .nm-section__lead {
+    margin-inline: auto;
+}
+
+.nm-role {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    /* Fixed 64px between the two columns; the stacked layout below uses 40px. */
+    gap: 4rem;
+}
+
+.nm-subhead {
+    margin: 0 0 1.5rem;
+    color: var(--sys-text-secondary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.nm-role__list {
+    display: grid;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nm-role__list li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: var(--sys-text);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.nm-role__list li::before {
+    content: "";
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background-color: var(--nm-deep);
+}
+
+.nm-process {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nm-process li {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-block: 1.15rem;
+    border-top: 1px solid var(--nm-line);
+}
+
+.nm-process li:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.nm-process li:last-child {
+    padding-bottom: 0;
+}
+
+.nm-process h4 {
+    margin: 0 0 0.3rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.nm-process p {
+    max-width: 48ch;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.nm-audience {
+    max-width: none;
+    /* Sits under the "What I owned" list, inside the left column. */
+    margin: clamp(1.5rem, 3vw, 2rem) 0 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--nm-deep);
+    background-color: var(--sys-surface);
+    color: var(--sys-text-secondary);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.nm-audience strong {
+    color: var(--sys-text);
+}
+
+/* 04 · Design decisions */
+#decisions {
+    padding-top: 64px;
+}
+
+#decisions .nm-section__head .nm-kicker {
+    margin-bottom: 4px;
+}
+
+#decisions .nm-section__head h2 {
+    max-width: none;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    /* display-md-bold */
+    font-size: var(--sys-typography-display-md-bold-font-size);
+    font-weight: var(--sys-typography-display-md-bold-font-weight);
+    line-height: var(--sys-typography-display-md-bold-line-height);
+    letter-spacing: var(--sys-typography-display-md-bold-letter-spacing);
+}
+
+.nm-decisions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2rem, 5vw, 4rem);
+}
+
+.nm-decision {
+    padding-block: 1.5rem;
+    border-top: 1px solid var(--nm-line);
+}
+
+.nm-decision__num {
+    color: var(--nm-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.nm-decision h3 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    letter-spacing: -0.01em;
+}
+
+.nm-decision p {
+    max-width: 46ch;
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+/* 05 · Final experience */
+#experience .nm-section__head .nm-kicker {
+    margin-bottom: 0;
+}
+
+#experience .nm-section__head h2 {
+    max-width: none;
+    white-space: nowrap;
+    /* display-md-bold */
+    font-size: var(--sys-typography-display-md-bold-font-size);
+    font-weight: var(--sys-typography-display-md-bold-font-weight);
+    line-height: var(--sys-typography-display-md-bold-line-height);
+    letter-spacing: var(--sys-typography-display-md-bold-letter-spacing);
+}
+
+#experience .nm-section__lead {
+    /* text-md-medium */
+    font-size: var(--sys-typography-text-md-medium-font-size);
+    font-weight: var(--sys-typography-text-md-medium-font-weight);
+    line-height: var(--sys-typography-text-md-medium-line-height);
+    letter-spacing: var(--sys-typography-text-md-medium-letter-spacing);
+}
+
+#experience .nm-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+#experience .nm-gallery__pair,
+#experience .nm-gallery > .nm-mobile {
+    grid-column: 1 / -1;
+}
+
+.nm-gallery {
+    display: grid;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.nm-figure {
+    margin: 0;
+}
+
+.nm-figure__frame {
+    overflow: hidden;
+    border: 1px solid var(--nm-line);
+    border-radius: 16px;
+    background-color: var(--sys-surface);
+    box-shadow: 0 10px 24px -20px rgba(24, 73, 69, 0.22);
+}
+
+.nm-figure__frame img {
+    width: 100%;
+    height: auto;
+}
+
+.nm-figure figcaption {
+    margin-top: 1rem;
+}
+
+.nm-figure__title {
+    margin: 0 0 0.3rem;
+    color: var(--sys-text);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.nm-figure__text {
+    max-width: 65ch;
+    margin: 0;
+    color: var(--sys-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.nm-gallery__pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px;
+    align-items: start;
+}
+
+/* Mobile proof point */
+.nm-mobile {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    align-items: center;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 1px solid var(--nm-line);
+    border-radius: 18px;
+    background-color: var(--nm-warm);
+}
+
+.nm-mobile__copy .nm-kicker {
+    margin-bottom: 0.75rem;
+}
+
+.nm-mobile__copy h3 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.nm-mobile__copy p:last-child {
+    max-width: 46ch;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.nm-device {
+    justify-self: center;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 4 / 5;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--nm-line);
+    border-radius: 26px;
+    background-color: var(--sys-surface);
+    box-shadow: 0 10px 24px -18px rgba(24, 73, 69, 0.22);
+}
+
+/* Show the first screen of the long mobile capture so the card stays compact. */
+.nm-device img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* 06 · Outcome */
+#outcome .nm-section__head {
+    margin-bottom: 24px;
+}
+
+#outcome .nm-section__head .nm-kicker {
+    margin-bottom: 0;
+}
+
+#outcome .nm-section__head h2 {
+    max-width: none;
+    white-space: nowrap;
+    /* display-md-bold */
+    font-size: var(--sys-typography-display-md-bold-font-size);
+    font-weight: var(--sys-typography-display-md-bold-font-weight);
+    line-height: var(--sys-typography-display-md-bold-line-height);
+    letter-spacing: var(--sys-typography-display-md-bold-letter-spacing);
+}
+
+.nm-outcome {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: start;
+}
+
+#outcome .nm-outcome__lead {
+    max-width: 54ch;
+    color: var(--sys-text);
+    /* text-xl-medium */
+    font-size: var(--sys-typography-text-xl-medium-font-size);
+    font-weight: var(--sys-typography-text-xl-medium-font-weight);
+    line-height: var(--sys-typography-text-xl-medium-line-height);
+    letter-spacing: var(--sys-typography-text-xl-medium-letter-spacing);
+}
+
+.nm-outcome__copy > p {
+    max-width: 58ch;
+    line-height: 1.7;
+}
+
+.nm-proof {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--nm-line);
+}
+
+.nm-proof h3 {
+    margin: 0 0 0.5rem;
+    color: var(--nm-deep);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.nm-proof p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.nm-learnings {
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border: 1px solid var(--nm-line);
+    border-radius: 14px;
+    background-color: var(--sys-surface);
+}
+
+.nm-learnings h3 {
+    margin: 0 0 1.25rem;
+    font-size: 1.1rem;
+}
+
+.nm-learnings ol {
+    display: grid;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: lesson;
+}
+
+.nm-learnings li {
+    position: relative;
+    padding-left: 2rem;
+    counter-increment: lesson;
+}
+
+.nm-learnings li::before {
+    content: counter(lesson, decimal-leading-zero);
+    position: absolute;
+    top: 0.1rem;
+    left: 0;
+    color: var(--nm-deep);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.nm-learnings strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: var(--sys-text);
+    font-size: 0.98rem;
+}
+
+.nm-learnings p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.nm-future {
+    max-width: 74ch;
+    margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--nm-line);
+    color: var(--sys-text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+.nm-future strong {
+    color: var(--sys-text);
+}
+
+/* Closing CTA */
+.nm-cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+    margin-top: clamp(3rem, 6vw, 5rem);
+    padding: clamp(2rem, 5vw, 4rem);
+    border-radius: 20px;
+    background-color: var(--nm-deep);
+    color: var(--sys-surface);
+}
+
+.nm-cta h2 {
+    max-width: 20ch;
+    margin: 0 0 0.5rem;
+    color: var(--sys-surface);
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+.nm-cta p {
+    max-width: 46ch;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.nm-cta .nm-kicker {
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nm-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.nm-cta :where(a, button):focus-visible {
+    outline-color: var(--sys-surface);
+}
+
+/* --------------------------------
+   Interactive gallery
+   The links remain real links without JavaScript; these styles only add
+   affordances and motion to the deployed screenshots above.
+-------------------------------- */
+.nm-gallery__open {
+    position: relative;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Keep the image fully opaque on hover/focus despite the global link rule. */
+.nm-gallery__open:hover,
+.nm-gallery__open:focus-visible {
+    opacity: 1;
+}
+
+.nm-gallery__open:hover {
+    transform: translateY(-4px);
+}
+
+.nm-gallery__open:hover .nm-figure__frame,
+.nm-gallery__open:hover .nm-shot {
+    box-shadow: 0 12px 24px -16px rgba(24, 73, 69, 0.22);
+}
+
+.nm-gallery__open .nm-figure__frame img,
+.nm-gallery__open .nm-shot img {
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nm-gallery__open:hover .nm-figure__frame img,
+.nm-gallery__open:focus-visible .nm-figure__frame img,
+.nm-gallery__open:hover .nm-shot img,
+.nm-gallery__open:focus-visible .nm-shot img {
+    transform: scale(1.025);
+}
+
+.nm-gallery__zoom {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--sys-surface);
+    color: var(--nm-deep);
+    box-shadow: 0 3px 8px -5px rgba(24, 73, 69, 0.22);
+    opacity: 0;
+    transform: translateY(4px) scale(0.92);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nm-gallery__open:hover .nm-gallery__zoom,
+.nm-gallery__open:focus-visible .nm-gallery__zoom {
+    opacity: 1;
+    transform: none;
+}
+
+/* Touch screens have no hover, so the zoom affordance is always visible. */
+@media (hover: none) {
+    .nm-gallery__zoom {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* --------------------------------
+   Screenshot lightbox
+-------------------------------- */
+.nm-lightbox[hidden] {
+    display: none;
+}
+
+.nm-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: clamp(0.5rem, 2vw, 2rem);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.nm-lightbox.is-open {
+    opacity: 1;
+}
+
+.nm-lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(12, 30, 28, 0.88);
+}
+
+.nm-lightbox__panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 1100px);
+    max-height: min(94dvh, 920px);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    background-color: var(--nm-warm);
+    box-shadow: 0 20px 48px -30px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+    transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nm-lightbox.is-open .nm-lightbox__panel {
+    opacity: 1;
+    transform: none;
+}
+
+.nm-lightbox :where(button):focus-visible {
+    outline: 3px solid var(--nm-deep);
+    outline-offset: 3px;
+}
+
+.nm-lightbox__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0.75rem 0.65rem 1.25rem;
+    border-bottom: 1px solid var(--nm-line);
+    background-color: var(--sys-surface);
+}
+
+.nm-lightbox__counter {
+    margin: 0;
+    color: var(--nm-deep);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.nm-lightbox__icon-button,
+.nm-lightbox__nav {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--nm-line);
+    border-radius: 50%;
+    background-color: var(--sys-surface);
+    color: var(--nm-deep);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nm-lightbox__icon-button:hover,
+.nm-lightbox__nav:hover {
+    border-color: var(--nm-deep);
+    background-color: var(--nm-deep);
+    color: var(--sys-surface);
+    box-shadow: 0 6px 12px -8px rgba(24, 73, 69, 0.25);
+}
+
+.nm-lightbox__stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: clamp(1rem, 2vw, 1.5rem) clamp(3.5rem, 7vw, 5rem);
+    /* Let vertical gestures pass through; horizontal swipes stay with the gallery. */
+    touch-action: pan-y;
+}
+
+.nm-lightbox__nav {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+}
+
+.nm-lightbox__nav:hover {
+    transform: translateY(-50%) scale(1.06);
+}
+
+.nm-lightbox__nav--prev {
+    left: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+.nm-lightbox__nav--next {
+    right: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+.nm-lightbox__figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    min-width: 0;
+    margin: 0;
+}
+
+.nm-lightbox__image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: min(58dvh, 560px);
+    border: 1px solid var(--nm-line);
+    border-radius: 12px;
+    background-color: var(--sys-surface);
+    object-fit: contain;
+}
+
+.nm-lightbox__caption {
+    max-width: 62ch;
+    text-align: center;
+}
+
+.nm-lightbox__title {
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.nm-lightbox__description {
+    margin: 0;
+    color: var(--sys-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.nm-lightbox__thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem 1rem;
+    overflow-x: auto;
+    border-top: 1px solid var(--nm-line);
+    background-color: var(--sys-surface);
+    scrollbar-width: thin;
+}
+
+.nm-lightbox__thumb {
+    flex: 0 0 auto;
+    width: 76px;
+    height: 54px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: var(--nm-warm);
+    cursor: pointer;
+    opacity: 0.62;
+    transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nm-lightbox__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nm-lightbox__thumb:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.nm-lightbox__thumb[aria-current="true"] {
+    opacity: 1;
+    border-color: var(--nm-deep);
+}
+
+@keyframes nm-lightbox-enter-next {
+    from {
+        opacity: 0;
+        transform: translateX(18px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes nm-lightbox-enter-prev {
+    from {
+        opacity: 0;
+        transform: translateX(-18px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.nm-lightbox__image.is-entering-next {
+    animation: nm-lightbox-enter-next 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nm-lightbox__image.is-entering-prev {
+    animation: nm-lightbox-enter-prev 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* --------------------------------
+   Responsive
+-------------------------------- */
+@media (max-width: 1024px) {
+    .nm-outcome {
+        grid-template-columns: 1fr;
+    }
+
+    /* Allow the long display heading to wrap instead of overflowing */
+    #problem .nm-section__head h2 {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 820px) {
+    .nm-hero__grid {
+        grid-template-columns: 1fr;
+        gap: clamp(2rem, 5vw, 3rem);
+    }
+
+    .nm-hero__content,
+    .nm-hero__figure {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .nm-hero__content {
+        padding-top: 0;
+    }
+
+    .nm-hero__subtitle {
+        max-width: none;
+    }
+
+    .nm-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .nm-role {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .nm-mobile {
+        grid-template-columns: 1fr;
+    }
+
+    .nm-device {
+        justify-self: start;
+    }
+
+    /* The display heading no longer fits on one line at this width. */
+    #experience .nm-section__head h2 {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 720px) {
+    .nm-split,
+    .nm-decisions,
+    .nm-gallery__pair,
+    .nm-proof {
+        grid-template-columns: 1fr;
+    }
+
+    .nm-cta {
+        grid-template-columns: 1fr;
+    }
+
+    .nm-hero__actions .nm-button,
+    .nm-cta__actions .nm-button {
+        width: 100%;
+    }
+
+    /* Allow the display heading to wrap on small screens instead of overflowing */
+    #decisions .nm-section__head h2,
+    #outcome .nm-section__head h2 {
+        white-space: normal;
+    }
+
+    #experience .nm-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .nm-lightbox__stage {
+        padding-inline: 3.25rem;
+    }
+
+    .nm-lightbox__image {
+        max-height: 52dvh;
+    }
+
+    .nm-lightbox__thumbs {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 560px) {
+    .nm-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .nm-cta {
+        padding: 1.75rem;
+    }
+
+    .nm-lightbox__panel {
+        max-height: 96dvh;
+        border-radius: 14px;
+    }
+
+    .nm-lightbox__stage {
+        padding: 0.75rem 3rem;
+    }
+
+    .nm-lightbox__nav {
+        width: 42px;
+        height: 42px;
+    }
+
+    .nm-lightbox__thumb {
+        width: 64px;
+        height: 46px;
+    }
+
+    .nm-lightbox__description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .nm-button {
+        transition: none;
+    }
+
+    .nm-button:hover,
+    .nm-button:focus-visible {
+        transform: none;
+    }
+
+    .nm-gallery__open,
+    .nm-gallery__open .nm-figure__frame img,
+    .nm-gallery__open .nm-shot img,
+    .nm-gallery__zoom,
+    .nm-lightbox,
+    .nm-lightbox__panel,
+    .nm-lightbox__icon-button,
+    .nm-lightbox__nav,
+    .nm-lightbox__thumb {
+        transition: none;
+    }
+
+    .nm-gallery__open:hover,
+    .nm-gallery__open:hover .nm-figure__frame img,
+    .nm-gallery__open:focus-visible .nm-figure__frame img,
+    .nm-gallery__open:hover .nm-shot img,
+    .nm-gallery__open:focus-visible .nm-shot img,
+    .nm-lightbox__thumb:hover,
+    .nm-lightbox__nav:hover {
+        transform: none;
+    }
+
+    .nm-lightbox__image.is-entering-next,
+    .nm-lightbox__image.is-entering-prev {
+        animation: none;
+    }
+}

@@ -1,0 +1,19 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NaijaMart placeholder artwork">
+  <defs>
+    <linearGradient id="nm-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5C2A33"/>
+      <stop offset="100%" stop-color="#C05F45"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#nm-bg)"/>
+  <g fill="none" stroke="#F0B08A" stroke-opacity="0.28">
+    <circle cx="930" cy="240" r="250" stroke-width="2"/>
+    <circle cx="930" cy="240" r="170" stroke-width="3"/>
+  </g>
+  <path d="M836 296h188l20 152a28 28 0 0 1-28 31H844a28 28 0 0 1-28-31z" fill="#F6D9C9" fill-opacity="0.16" stroke="#F0B08A" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M892 296v-30a42 42 0 0 1 84 0v30" fill="none" stroke="#F6D9C9" stroke-width="4" stroke-linecap="round"/>
+  <text x="92" y="380" font-family="'Segoe UI', Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1" fill="#FFFFFF">NaijaMart</text>
+  <text x="94" y="428" font-family="'Segoe UI', Arial, sans-serif" font-size="26" fill="#F6D9C9">Fashion e-commerce MVP</text>
+  <rect x="92" y="452" width="56" height="6" rx="3" fill="#F0B08A"/>
+  <text x="94" y="540" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#F6D9C9" fill-opacity="0.85">Placeholder artwork — replace with the NaijaMart cover</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Menowell placeholder artwork">
+  <defs>
+    <linearGradient id="mn-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4A2C57"/>
+      <stop offset="100%" stop-color="#8A4B6F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#mn-bg)"/>
+  <path d="M240 430c40-96 130-160 250-160 130 0 230 84 310 130 70 40 120 52 170 44 60-10 100-44 130-96" fill="none" stroke="#E9C7D8" stroke-width="22" stroke-linecap="round" stroke-opacity="0.9"/>
+  <circle cx="490" cy="270" r="26" fill="#F2DDE7"/>
+  <circle cx="820" cy="264" r="26" fill="#F2DDE7"/>
+  <circle cx="1050" cy="330" r="26" fill="#F2DDE7" fill-opacity="0.8"/>
+  <path d="M560 470h160M720 570h320" stroke="#F2DDE7" stroke-width="10" stroke-linecap="round" stroke-opacity="0.5"/>
+  <text x="90" y="120" font-family="'Segoe UI', Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="-1" fill="#FFFFFF">Menowell</text>
+  <text x="92" y="168" font-family="'Segoe UI', Arial, sans-serif" font-size="26" fill="#F2DDE7">Menopause support platform</text>
+  <rect x="90" y="192" width="56" height="6" rx="3" fill="#F2DDE7"/>
+  <text x="90" y="250" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#F2DDE7" fill-opacity="0.85">Placeholder artwork — replace with the Menowell cover</text>
+</svg>

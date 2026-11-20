@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All projects by Adetiba Samuel, UI/UX & Product Designer — including NaijaMart, Menowell, and GreenScore case studies.">
+    <meta name="theme-color" content="#F8F8F5">
+    <title>Projects — Adetiba Samuel</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projects — Adetiba Samuel">
+    <meta property="og:description" content="A look at the products Adetiba has designed and helped bring to life.">
+    <meta property="og:site_name" content="Adetiba Samuel">
+    <meta property="og:image" content="assets/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects — Adetiba Samuel">
+    <meta name="twitter:description" content="A look at the products Adetiba has designed and helped bring to life.">
+    <meta name="twitter:image" content="assets/og-image.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/sys-tokens.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a href="index.html" class="site-logo">Adetiba Samuel<span class="site-logo__dot">.</span></a>
+            <button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+                <svg class="mobile-menu-icon mobile-menu-icon--open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg class="mobile-menu-icon mobile-menu-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <nav class="main-nav">
+                <ul id="main-nav" class="nav-list">
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                    <li><a href="projects.html" class="nav-link" aria-current="page">Work</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="button button--primary header-cta">Hire Me</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <p class="case-label">Selected Work</p>
+                <h1 class="hero__title">Projects</h1>
+                <p class="hero__headline">A look at the products I've designed and helped bring to life — from concept and wireframes to functional interfaces.</p>
+            </div>
+        </section>
+
+        <!-- All Projects -->
+        <section class="projects bg-neutral">
+            <div class="container">
+                <h2 class="section-title">All Projects</h2>
+                <div class="project-grid" id="all-projects"></div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Interested in working together?</h2>
+                <div class="contact__content" id="profile-contact"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p>&copy; <span id="current-year"></span> Adetiba Samuel. All rights reserved.</p>
+            <div class="social-links" id="profile-socials"></div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

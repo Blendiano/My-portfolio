@@ -1,0 +1,7 @@
+# Files that are only needed for local development.
+# Keeping them out of the deployment means the live site never serves them.
+dev-server.js
+node_modules
+.env
+.env.*
+!.env.example

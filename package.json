@@ -1,0 +1,18 @@
+{
+  "name": "adetiba-samuel-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Adetiba Samuel, UI/UX & Product Designer",
+  "main": "index.html",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node dev-server.js"
+  },
+  "keywords": [],
+  "author": "Adetiba Samuel",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^10.2.0"
+  }
+}

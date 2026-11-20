@@ -1,0 +1,75 @@
+/* Menowell case study — brand overrides for the shared case-study UI.
+   Layout, gallery and lightbox styles come from case-study-naijamart.css so
+   both case studies keep the same structure and behaviour. */
+.mw-case.nm-case {
+    --nm-deep: #4A2C57;
+    --nm-warm: #FBF7FA;
+    --nm-line: #E7DDE4;
+    --nm-accent: #6E3A57;
+}
+
+/* Start the hero copy at the same line as the screenshot beside it. */
+.mw-case .nm-hero__content {
+    padding-top: 0;
+}
+
+/* Tighten the gap between the section label and its display heading. */
+.mw-case #problem .nm-section__head .nm-kicker {
+    margin-bottom: 4px;
+}
+
+/* Outcome: sit the learnings box alongside the section label and heading. */
+.mw-case #outcome .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    column-gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.mw-case #outcome .nm-section__head {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Let the copy and the box become items of the section grid. */
+.mw-case #outcome .nm-outcome {
+    display: contents;
+}
+
+.mw-case #outcome .nm-outcome__copy {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.mw-case #outcome .nm-learnings {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+}
+
+.mw-case #outcome .nm-future {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+/* The lessons read as statements, not a numbered sequence. */
+.mw-case #outcome .nm-learnings li {
+    padding-left: 0;
+}
+
+.mw-case #outcome .nm-learnings li::before {
+    content: none;
+}
+
+@media (max-width: 820px) {
+    .mw-case #outcome .container {
+        grid-template-columns: 1fr;
+    }
+
+    .mw-case #outcome .nm-section__head,
+    .mw-case #outcome .nm-outcome__copy,
+    .mw-case #outcome .nm-learnings,
+    .mw-case #outcome .nm-future {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
