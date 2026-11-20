@@ -66,7 +66,7 @@ export const projects = [
       { src: "../assets/images/menowell/menowell-insights.webp", alt: "Menowell insights screen prompting the user to log symptoms first", width: 1181, height: 529 }
     ],
     thumbnail: "assets/images/menowell-thumbnail.svg",
-    liveUrl: "https://menowell-gjcgqs1on-blendianos-projects.vercel.app/",
+    liveUrl: "https://menowell-two.vercel.app/",
     designUrl: "#",
     repositoryUrl: ""
   },
